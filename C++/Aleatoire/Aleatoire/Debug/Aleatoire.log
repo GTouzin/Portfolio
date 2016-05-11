@@ -1,0 +1,32 @@
+﻿Build started 2014-05-27 21:18:37.
+     1>Project "C:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Aleatoire\Aleatoire\Aleatoire.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\Aleatoire.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\include\opencv" /I"C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\Aleatoire.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\include\opencv" /I"C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Aleatoire.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Aleatoire.cpp
+         Skipping... (no relevant changes detected)
+         Aleatoire.cpp
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Aleatoire\Debug\Aleatoire.exe" /INCREMENTAL /NOLOGO "C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\x64\vc10\lib\opencv_core230d.lib" "C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\x64\vc10\lib\opencv_highgui230d.lib" "C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\x64\vc10\lib\opencv_video230d.lib" "C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\x64\vc10\lib\opencv_ml230d.lib" "C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\x64\vc10\lib\opencv_legacy230d.lib" "C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\x64\vc10\lib\opencv_imgproc230d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Aleatoire.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Aleatoire\Debug\Aleatoire.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Aleatoire\Debug\Aleatoire.lib" /MACHINE:X86 Debug\Aleatoire.exe.embed.manifest.res
+         Debug\Aleatoire.obj
+         Debug\stdafx.obj
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvReleaseImage referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvDestroyWindow referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvSaveImage referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvSet2D referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvGet2D referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvCloneImage referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvWaitKey referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvShowImage referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvNamedWindow referenced in function _wmain
+     1>Aleatoire.obj : error LNK2019: unresolved external symbol _cvLoadImage referenced in function _wmain
+     1>C:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Aleatoire\Debug\Aleatoire.exe : fatal error LNK1120: 10 unresolved externals
+     1>Done Building Project "C:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Aleatoire\Aleatoire\Aleatoire.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.03

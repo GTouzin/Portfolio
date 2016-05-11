@@ -1,0 +1,8 @@
+c:\users\guillaume\documents\visual studio 2010\Projects\Test_Compression\Test_Compression\bin\Debug\Test_Compression.exe
+c:\users\guillaume\documents\visual studio 2010\Projects\Test_Compression\Test_Compression\bin\Debug\Test_Compression.pdb
+c:\users\guillaume\documents\visual studio 2010\Projects\Test_Compression\Test_Compression\obj\x86\Debug\Test_Compression.exe
+c:\users\guillaume\documents\visual studio 2010\Projects\Test_Compression\Test_Compression\obj\x86\Debug\Test_Compression.pdb
+C:\Users\Guillaume\documents\visual studio 2010\Projects\Test_Compression\Test_Compression\bin\Debug\System.Data.dll
+C:\Users\Guillaume\documents\visual studio 2010\Projects\Test_Compression\Test_Compression\obj\x86\Debug\Test_Compression.csprojResolveAssemblyReference.cache
+E:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Test_Compression\Test_Compression\obj\x86\Debug\Test_Compression.exe
+E:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Test_Compression\Test_Compression\obj\x86\Debug\Test_Compression.pdb

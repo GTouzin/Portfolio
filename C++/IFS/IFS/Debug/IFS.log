@@ -1,0 +1,11 @@
+﻿Build started 2011-11-18 00:46:08.
+     1>Project "C:\Users\Guillaume\Documents\Visual Studio 2010\Projects\IFS\IFS\IFS.vcxproj" on node 2 (ClCompile target(s)).
+     1>ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\include\opencv" /I"C:\Users\Guillaume\Documents\projet opencv\OpenCV2.3\build\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\IFS.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt IFS.cpp
+         Skipping... (no relevant changes detected)
+         IFS.cpp
+     1>Done Building Project "C:\Users\Guillaume\Documents\Visual Studio 2010\Projects\IFS\IFS\IFS.vcxproj" (ClCompile target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.09
