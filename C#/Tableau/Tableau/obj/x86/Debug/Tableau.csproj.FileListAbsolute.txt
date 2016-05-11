@@ -1,0 +1,10 @@
+C:\Users\Guillaume\documents\visual studio 2010\Projects\Tableau\Tableau\bin\Debug\Tableau.exe
+C:\Users\Guillaume\documents\visual studio 2010\Projects\Tableau\Tableau\bin\Debug\Tableau.pdb
+C:\Users\Guillaume\documents\visual studio 2010\Projects\Tableau\Tableau\obj\x86\Debug\Tableau.exe
+C:\Users\Guillaume\documents\visual studio 2010\Projects\Tableau\Tableau\obj\x86\Debug\Tableau.pdb
+C:\Users\Guillaume\documents\visual studio 2010\Projects\Tableau\Tableau\obj\x86\Debug\Tableau.csprojResolveAssemblyReference.cache
+E:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Tableau\Tableau\obj\x86\Debug\Tableau.exe
+E:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Tableau\Tableau\obj\x86\Debug\Tableau.pdb
+E:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Tableau\Tableau\bin\Debug\Tableau.exe
+E:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Tableau\Tableau\bin\Debug\Tableau.pdb
+E:\Users\Guillaume\Documents\Visual Studio 2010\Projects\Tableau\Tableau\obj\x86\Debug\Tableau.csprojResolveAssemblyReference.cache
