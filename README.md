@@ -8,7 +8,7 @@ So feel free to look at my code and comments on my old projects while I'm buildi
 
 Vous trouverez dans ce répertoire une série de projets sur lesquels j'ai travaillé au fils des ans. Ces projets sont séparés selon le langage utilisé. 
 
--Java
+1.Java
 *CompressionTest
 Dans ce projet, j'ai voulu tester une nouvelle méthode de compression de données. Le programme génère plusieurs série de nombres pseudo-aléatoires à l'aide d'un générateur congruentiel linéaire, puis crée un dictionnaire où sont noté les séries de nombres et les paramètres du générateur. Puisque le nombre de paramètres est beaucoup moins important que le nombre pouvant être généré dans les séries, en récrivant des séries de nombres sous forme de ces paramètres, nous pouvons sauver beaucoup d'espace disque. Le programme teste cette hypothèse en utilisant le dictionnaire sur une liste de nombres aléatoires de taille choissi par l'utilisateur.
 
