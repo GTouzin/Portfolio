@@ -15,12 +15,16 @@ Dans ce projet, j'ai voulu tester une nouvelle méthode de compression de donné
 *PictureModifier
 Le but de ce projet est de faire du traiment d'image à l'aide d'algorithme d'apprentissage automatique. Dans celui-ci, une image est lue, puis un certain nombre de rectangles de tailles et de couleurs différentes sont générés de manière aléatoire. Ensuite, un algorithme génétique modifi les rectangles, deux à la fois, jusqu'à ce que l'ensemble des rectangles forment une approximation acceptable de l'image de départ.
 
-1.C++
+2.C++
 *snes_test
 Ce programme lit une image, puis la pixelise selon certain paramètre spécifié par l'utilisateur.
 
 *Background
 J'ai travaillé dans mes temps libres sur la production d'un jeu vidéo et ce programme fût utiliser pour générer rapidement des arrière plan aléatoires utilisés temporairement durant la programmation du "gameplay". Le programme lit des fichiers .jpg, crée des éléments formant l'arrière plan, les place sur des calques selon les paramètres spécifiés par l'utilisateur et retourne une image où tous les calques sont fusionné. La position des éléments, ainsi que leur grandeur est déterminé aléatoirement de manière à créer de la diversité dans l'image finale.
+
+3.C#
+* Une variante du programme CompressionTest, mais implémenté en C# et utilisant un autre algorithme pour générer les suites de nombres pseudo-aléatoires.
+
 
 
 
