@@ -23,8 +23,11 @@ Ce programme lit une image, puis la pixelise selon certain paramètre spécifié
 J'ai travaillé dans mes temps libres sur la production d'un jeu vidéo et ce programme fût utiliser pour générer rapidement des arrière plan aléatoires utilisés temporairement durant la programmation du "gameplay". Le programme lit des fichiers .jpg, crée des éléments formant l'arrière plan, les place sur des calques selon les paramètres spécifiés par l'utilisateur et retourne une image où tous les calques sont fusionné. La position des éléments, ainsi que leur grandeur est déterminé aléatoirement de manière à créer de la diversité dans l'image finale.
 
 3.C#
-* Une variante du programme CompressionTest, mais implémenté en C# et utilisant un autre algorithme pour générer les suites de nombres pseudo-aléatoires.
+* Tableau
+Une variante du programme CompressionTest, mais implémenté en C# et utilisant un autre algorithme pour générer les suites de nombres pseudo-aléatoires.
 
+*Test_Compression
+Petit programme que j'ai écris pour gérer une base de données à l'aide de C#. Ce programme permet de se connecter à une base de donnée, puis d'écrire et de lire sur des tables spécifiques. C'est le modèle que j'utilise lorsque j'ai à utiliser une base de donnée dans un projet.
 
 
 
