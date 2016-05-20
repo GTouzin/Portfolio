@@ -16,9 +16,9 @@ public class Chromosome {
 			
 	}
 	
-	public int[] getArray(Chromosome x)
+	public int[] getArray()
 	{
-		return x.array;
+		return array;
 	}
 	
 	

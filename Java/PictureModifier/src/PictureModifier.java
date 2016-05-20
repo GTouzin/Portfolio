@@ -1,12 +1,11 @@
-import static com.googlecode.javacv.cpp.opencv_core.*;
+import static org.bytedeco.javacpp.opencv_core.*;
 //import static com.googlecode.javacv.cpp.opencv_imgproc.*;
-import static com.googlecode.javacv.cpp.opencv_highgui.*;
-//import javax.swing.JFrame;
-//import com.googlecode.javacv.CanvasFrame;
+import static org.bytedeco.javacpp.opencv_imgproc.*;
+import static org.bytedeco.javacpp.opencv_imgcodecs.*;
+import static org.bytedeco.javacpp.opencv_highgui.*;
 
-import com.googlecode.javacv.cpp.opencv_core.CvScalar;
-import com.googlecode.javacv.cpp.opencv_core.IplImage;
-
+//import org.bytedeco.javacpp.opencv_core.CvScalar;
+import org.bytedeco.javacpp.opencv_core.IplImage;
 
 
 public class PictureModifier {
@@ -14,12 +13,10 @@ public class PictureModifier {
 	/**
 	 * @param args
 	 */
+	
 	public static void main(String[] args) {
 		
-		int a=GrayCode.binaryToGray(6);
-		System.out.println(a);
-		
-		IplImage image = cvLoadImage("Sans titre.jpg");
+		IplImage image = cvLoadImage("Grumpy-Cat-Tadar-Sauce2.jpg");
 				
 		cvNamedWindow("win1", CV_WINDOW_AUTOSIZE);
 
@@ -29,11 +26,14 @@ public class PictureModifier {
 		
 		cvDestroyWindow("win1");
 				
-		ArtificialSelection test=new ArtificialSelection(3,image,true);
+		ArtificialSelection test=new ArtificialSelection(30,image);
 		
-		test.Progres(10);
+		
+		test.Progres(1);
+		
 	
 		cvReleaseImage(image );
+		
 		
 		
 		//IplImage image = cvLoadImage("Sans titre.jpg");

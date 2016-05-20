@@ -1,26 +1,37 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-import static com.googlecode.javacv.cpp.opencv_core.*;
-import static com.googlecode.javacv.cpp.opencv_highgui.CV_WINDOW_AUTOSIZE;
-import static com.googlecode.javacv.cpp.opencv_highgui.cvDestroyWindow;
-import static com.googlecode.javacv.cpp.opencv_highgui.cvLoadImage;
-import static com.googlecode.javacv.cpp.opencv_highgui.cvNamedWindow;
-import static com.googlecode.javacv.cpp.opencv_highgui.cvShowImage;
-import static com.googlecode.javacv.cpp.opencv_highgui.cvWaitKey;
+import static org.bytedeco.javacpp.opencv_core.*;
+//import static org.bytedeco.javacpp.opencv_highgui.*;
+import static org.bytedeco.javacpp.opencv_highgui.CV_WINDOW_AUTOSIZE;
+import static org.bytedeco.javacpp.opencv_highgui.cvDestroyWindow;
+//import static org.bytedeco.javacpp.opencv_highgui.cvLoadImage;
+import static org.bytedeco.javacpp.opencv_highgui.cvNamedWindow;
+import static org.bytedeco.javacpp.opencv_highgui.cvShowImage;
+import static org.bytedeco.javacpp.opencv_highgui.cvWaitKey;
 
-import com.googlecode.javacv.cpp.opencv_core.IplImage;
 
-import static com.googlecode.javacv.cpp.opencv_highgui.*;
 
-import com.googlecode.javacv.cpp.opencv_core.CvScalar;
+
+import org.bytedeco.javacpp.opencv_core.IplImage;
+import org.bytedeco.javacpp.opencv_core.CvScalar;
 
 public class ArtificialSelection {
-	public Chromosome[] ensemble;
+	public Chromosome[] ensemble;                                          //Tableau contenant les rectangles
+	public double[] mse;                                                   //Tableau contenant les mse des rectangles
 	public IplImage img;
 	public int n;
 	public int max;
+	
+	Random randomGenerator = new Random();	
+	
+	//Constructeur qui génère 
 	public ArtificialSelection(int nombre_rectangle, IplImage image)
 	{
 		img=image;
@@ -30,15 +41,18 @@ public class ArtificialSelection {
 		n=nombre_rectangle;
 		
 		ensemble=new Chromosome[n];
+		mse= new double[n];
 		
-		Random randomGenerator = new Random();			
 				
+		
+		
 		for(int i=0;i<n;i++)
 		{
 			int x1 = randomGenerator.nextInt(img.width());
 			int y1 = randomGenerator.nextInt(img.height());
 			int x2 = randomGenerator.nextInt(img.width());
 			int y2 = randomGenerator.nextInt(img.height());
+
 			if(x1==x2)
 			{
 				while(x1==x2)
@@ -54,23 +68,32 @@ public class ArtificialSelection {
 					y2 = randomGenerator.nextInt(img.height());
 				}
 			}
-						
-			int r1 = randomGenerator.nextInt(256);
-			int g1 = randomGenerator.nextInt(256);
-			int b1 = randomGenerator.nextInt(256);
+			
+			// Choissir un point au hasard sur l'image et assigne la couleur au rectangle (accélère la conversion)
+			CvScalar hasard=cvGet2D(img,randomGenerator.nextInt(img.height()),randomGenerator.nextInt(img.width()));
+			
+			
+			//int r1 = randomGenerator.nextInt(256);
+			//int g1 = randomGenerator.nextInt(256);
+			//int b1 = randomGenerator.nextInt(256);
+
+			int r1 = (int) hasard.val(0);
+			int g1 = (int) hasard.val(1);
+			int b1 = (int) hasard.val(2);
 			
 			ensemble[i]=new Chromosome(x1,y1,x2,y2,b1,g1,r1);
+			mse[i]=Comparaison(ensemble[i]);
 			
 			long temp=System.currentTimeMillis();
 			if(System.currentTimeMillis()-temp<10)
 			{
-				while(System.currentTimeMillis()-temp<5)
+				while(System.currentTimeMillis()-temp<2)
 				{
 					
 				}
 			}
 		}
-		System.out.println("1");
+		//System.out.println("1");
 	}
 	
 	public ArtificialSelection(int nombre_rectangle, IplImage image, boolean aleatoire) //Aléatoire détermine si les couleurs sont choissies au hasard
@@ -275,7 +298,7 @@ public class ArtificialSelection {
 				
 			} System.out.println("compteur"+compteur);
 		}
-		System.out.println("2");
+		//System.out.println("2");
 	}
 	public double Comparaison(Chromosome x)
 	{
@@ -297,8 +320,7 @@ public class ArtificialSelection {
 		mse[0]=0;
 		mse[1]=0;
 		mse[2]=0;
-		
-		
+				
 						
 		for(int i=haut;i<bas;i++)
 		{
@@ -307,9 +329,7 @@ public class ArtificialSelection {
 				CvScalar s=cvGet2D(img,i,j);
 				mse[0]=mse[0]+(Math.abs(s.val(0)-b1));
 				mse[1]=mse[1]+(Math.abs(s.val(1)-g1));
-				mse[2]=mse[2]+(Math.abs(s.val(2)-r1));
-				
-								
+				mse[2]=mse[2]+(Math.abs(s.val(2)-r1));	
 			}
 		}
 		
@@ -318,56 +338,61 @@ public class ArtificialSelection {
 		mse[1]=mse[1]/compte;
 		mse[2]=mse[2]/compte;
 				
-		System.out.println("3");
+		//System.out.println("3");
 		return mse[0]+mse[1]+mse[2];
 	}
 	
 	public void Selection() 
 	{
-		double erreur1=0;
-		double erreur2=0;
+		double erreur1=mse[0];
+		double erreur2=mse[0];
 		int 	index1=0;
 		int 	index2=0;
-		double erreurmin1=100000;
+		//double erreurmin1=erreur1;
 		int 	indexmin1=0;
 		int 	indexmin2=0;
 		
 		
 		for(int i=0;i<n;i++)
 		{
-			double temp=Comparaison(ensemble[i]);
+			double temp=mse[i];
 			if(temp>erreur1)
 			{
 				erreur1=temp;
 				index1=i;
 			}
-			else
-			{
-				if(temp>erreur2)
-				{
-					erreur2=temp;
-					index2=i;
-				}
-			}
-			if(temp<erreurmin1)
-			{
-				erreurmin1=temp;
-				indexmin1=i;
-			}
+		//	else
+		//	{
+		//		if(temp>erreur2)
+		//		{
+		//			erreur2=temp;
+		//			index2=i;
+		//		}
+		//	}
+		//	if(temp<erreurmin1)
+		//	{
+		//		erreurmin1=temp;
+		//		indexmin1=i;
+		//	}
 			
 		}
-		Random randomGenerator = new Random();		
 		
+	// Variante: choisir un élément au hasard pour favoriser l'exploration et ralentir la convergence
+		
+		Random randomGenerator = new Random();		
+				
 		int randomInt = randomGenerator.nextInt(ensemble.length);
-		if(randomInt==index1||randomInt==index2||randomInt==indexmin1)
+		if(randomInt==index1)
 		{
-			while(randomInt==index1||randomInt==index2||randomInt==indexmin1)
+			while(randomInt==index1)
 			{
 				randomInt = randomGenerator.nextInt(ensemble.length);
 			}			
 		}
+		
+		indexmin1=index1;
 		indexmin2=randomInt;
-		Splice sex=new Splice(ensemble[indexmin1],ensemble[indexmin2],max);
+		Splice sex=new Splice(ensemble[indexmin1],ensemble[indexmin2]);             //Rajouter paramètre ,max     
 		
 		Chromosome enfant1=sex.getEnfantx();
 		int temp=GrayCode.grayToBinary(enfant1.array[0]);
@@ -411,6 +436,7 @@ public class ArtificialSelection {
 				enfant1.array[3]=GrayCode.binaryToGray(img.height());
 			}	
 		ensemble[index1]=enfant1;
+		mse[index1]=Comparaison(enfant1);
 		
 		
 		
@@ -456,36 +482,48 @@ public class ArtificialSelection {
 				enfant2.array[3]=GrayCode.binaryToGray(img.height());
 			}	
 		ensemble[index2]=enfant2;
-		System.out.println("4");
+		mse[index2]=Comparaison(enfant2);
+		//System.out.println("4");
 	}
+	
+	
 	public void Progres(int iteration)
 	{
-		System.out.println("6");
+		//System.out.println("6");
 	
 			boolean Continue=true;
+			Scanner scan = new Scanner(System.in);
 			while(Continue)
 			{
 				for(int i=1;i<=iteration;i++)
 				{
 					Selection();
 				}
-				System.out.println("7");
+				//System.out.println("7");
 				Composition();
+				
 				
 							
 				System.out.println("Voulez-vous continuer:o/n ");
-				Scanner scan = new Scanner(System.in);
+				
 				String reponse = scan.nextLine(); 
-				         
+								         
 				if(reponse.equals("n"))
 				{
 					Continue=false;
+					Enregistrer();
+				}
+				else
+				{
+					System.out.println("Calcul en cour...");
+					
 				}
 				
 				
 			}
 		
-			System.out.println("5");
+			//System.out.println("5");
+			scan.close();
 	}
 	public void Composition()
 	{
@@ -513,10 +551,10 @@ public class ArtificialSelection {
 				{
 					CvScalar s = cvScalar(GrayCode.grayToBinary(ensemble[i].array[4]), GrayCode.grayToBinary(ensemble[i].array[5]), GrayCode.grayToBinary(ensemble[i].array[6]),0);
 					CvScalar t= cvGet2D(img2,j,k);
-					CvScalar u = cvScalar(t.val(0)+s.val(0),t.val(1)+s.val(1),t.val(2)+s.val(2),0);
-						cvSet2D(img2,j,k,u);
+					//CvScalar u = cvScalar(t.val(0)+s.val(0),t.val(1)+s.val(1),t.val(2)+s.val(2),0);    			utiliser si on veux que les rectangles s'add
+						cvSet2D(img2,j,k,s);
 				}
-			}
+			 }
 			
 		}
 		
@@ -530,9 +568,90 @@ public class ArtificialSelection {
 		
 		cvReleaseImage(img2 );
 		
-		System.out.println("8");
+		//System.out.println("8");
 	}
 	
+	public void Enregistrer()
+	{
+		try {			
+		
+			File fichier=new File("E:/Users/Guillaume/workspace/workspace/PictureModifier/Rectangles.txt");
+			FileWriter file = new FileWriter(fichier);
+			
+		for(int t =0; t<ensemble.length;t++)
+		 {
+			int[] temp = ensemble[t].getArray();			
+			
+			 for(int x =0; x<temp.length;x++)
+			 {
+				 
+				 file.write(Integer.toString(temp[x]));
+				 file.write( "\n");
+				 
+			 } 
+			 			 
+		 }
+		file.close();
+		} 
+		catch (IOException e) {
+		      System.out.println("Error - " + e.toString());
+			}
+	}
+	
+	
+	public Chromosome[] Lire(int n)
+	{
+		int [][] lecture = new int[n][7];
+		Chromosome[] rectangle = new Chromosome[n];
+
+		try {			
+			
+			File fichier=new File("E:/Users/Guillaume/workspace/workspace/PictureModifier/Rectangles.txt");
+			FileReader file = new FileReader(fichier);
+
+			BufferedReader br = new BufferedReader(file);
+			int countery=0;
+			int counterx=0;
+			for(String ligne; (ligne = br.readLine()) != null; ) {
+				 if(counterx<7)
+				 {
+					 lecture[countery][counterx]=Integer.parseInt(ligne);
+					 counterx++;
+				 }
+				 else
+				 {
+					 counterx=0;
+					 countery++;
+					 lecture[countery][counterx]=Integer.parseInt(ligne);
+				 }
+		    }
+			    
+			    br.close();
+			    
+			    for(int i=0;i<n;i++)
+			    {
+			    	rectangle[i]=new Chromosome(lecture[i][0],lecture[i][1],lecture[i][2],lecture[i][3],lecture[i][4],lecture[i][5],lecture[i][6]);
+			    }
+			
+		} 
+		catch (IOException e) {
+		      System.out.println("Error - " + e.toString());
+			}
+
+		
+		return rectangle;
+	}
+	
+	public void Continuer()
+	{
+		Chromosome[] temp = Lire(n);
+		for(int i=0; i<n;i++)
+		{
+			ensemble[i]=temp[i];
+		}
+		
+		
+	}
 	
 	
 }

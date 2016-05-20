@@ -4,9 +4,12 @@ import java.util.Random;
 
 public class Splice {
 	
-	public int[] array1;
-	public int[] array2;
-	public int bit;
+	public int[] array1;             						//Tableau contenant le premier rectangle
+	public int[] array2;             						//Tableau contenant le deuxième rectangle
+	public int bit;											//Variable contenant la longueur des chromosomes avec lesquels on veux travailler
+	
+	Random randomGenerator = new Random();	
+	
 	public Splice(Chromosome x, Chromosome y, int Bit)
 
 	{
@@ -45,7 +48,7 @@ public class Splice {
 		
 		//Ont génère le point de séparation		
 		
-		Random randomGenerator = new Random();		
+			
 		
 		int randomInt = randomGenerator.nextInt(parentx.length());
 		
@@ -90,6 +93,17 @@ public class Splice {
 		}
 		
 	}
+	
+	
+	public Splice(Chromosome x, Chromosome y)
+
+	{
+		array1=x.array;
+		array2=y.array;
+				
+	}
+	
+	
 
 	public Chromosome getEnfantx()
 	{
