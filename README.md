@@ -19,8 +19,11 @@ Vous trouverez dans ce répertoire une série de projets sur lesquels j'ai trava
 
 
 ##Java
+* Bubble_Level
+  * Prototype d'une application faite pour un client avec Android studio. L'application comporte deux types de niveau, un rapporteur d'angle et un détecteur de métal servant de détecteur de vis, de tuyaux et de fils. 
+  
 * CompressionTest
-  * Dans ce projet, j'ai voulu tester une nouvelle méthode de compression de données. Le programme génère plusieurs séries de nombres pseudo-aléatoires à l'aide d'un générateur congruentiel linéaire, puis crée un dictionnaire où sont notés les séries de nombres et les paramètres du générateur. Puisque le nombre de paramètres est beaucoup moins important que le nombre pouvant être généré dans les séries, en récrivant des séries de nombres sous forme de ses paramètres, nous pouvons économiser beaucoup d'espace disque. Le programme teste cette hypothèse en utilisant le dictionnaire sur une liste de nombres aléatoires de taille choisie par l'utilisateur.
+  * Ce programme génère plusieurs séries de nombres pseudo-aléatoires à l'aide d'un générateur congruentiel linéaire, puis crée un dictionnaire où sont notés les séries de nombres et les paramètres du générateur. Puisque le nombre de paramètres est beaucoup moins important que le nombre pouvant être généré dans les séries, en récrivant des séries de nombres sous forme de ses paramètres, nous pouvons économiser beaucoup d'espace disque. Le programme teste cette hypothèse en utilisant le dictionnaire sur une liste de nombres aléatoires de taille choisie par l'utilisateur.
 
 * PictureModifier
   * Le but de ce projet est de faire du traitement d'image à l'aide d'algorithme d'apprentissage automatique. Dans celui-ci, une image est lue, puis un certain nombre de rectangles de tailles et de couleurs différentes sont générés de manière aléatoire. Ensuite, un algorithme génétique modifie les rectangles, deux à la fois, jusqu'à ce que l'ensemble des rectangles forme une approximation acceptable de l'image de départ.
