@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#007e44</color>
+    <color name="colorPrimaryDark">#004e2a</color>
+    <color name="colorAccent">#01cf70</color>
+    <color name="TextColorPrimary">#ffffff</color>
+    <color name="windowBackground">#ffffff</color>
+    <color name="Tuile_color">#007e44</color>
+</resources>
+
+
+

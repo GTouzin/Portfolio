@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Boite à outils</string>
+    <string name="Button_bubble">Niveau circulaire</string>
+    <string name="Button_spirit">Niveau</string>
+    <string name="Button_stud">Détecteur de montant</string>
+    <string name="Button_incl">Rapporteur d\'angle</string>
+    <string name="Button_fils">Détecteur de fils</string>
+    <string name="Button_tuyau">Détecteur de tuyaux</string>
+    <string name="action_list">Outils</string>
+
+    <string name="half_inch_button">1/2 pouce</string>
+    <string name="three_quarter_button">3/4 pouce</string>
+    <string name="one_inch_button">1 pouce</string>
+
+    <string name="return_main">Accueil</string>
+    <string name="return_niveau">Niveau</string>
+    <string name="return_nivelle">Nivelle</string>
+    <string name="return_montant">Détecteur de montant</string>
+    <string name="return_fil">Détecteur de fils</string>
+    <string name="return_tuyaux">Détecteur de tuyaux</string>
+    <string name="return_angle">Rapporteur d\'angles</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <!-- Item dans le navigation drawer  -->
+    <string name="nav_item_main">Accueil</string>
+    <string name="nav_item_niveau">Niveau</string>
+    <string name="nav_item_nivelle">Nivelle</string>
+    <string name="nav_item_montant">Détecteur de montant</string>
+    <string name="nav_item_fil">Détecteur de fils</string>
+    <string name="nav_item_tuyaux">Détecteur de tuyaux</string>
+    <string name="nav_item_angle">Rapporteur d\'angles</string>
+
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_main</item>
+        <item>@string/nav_item_niveau</item>
+        <item>@string/nav_item_nivelle</item>
+        <item>@string/nav_item_montant</item>
+        <item>@string/nav_item_fil</item>
+        <item>@string/nav_item_tuyaux</item>
+        <item>@string/nav_item_angle</item>
+    </string-array>
+
+    <string name="titre_accueil">Accueil</string>
+    <string name="titre_niveau">Niveau</string>
+    <string name="titre_nivelle">Nivelle</string>
+    <string name="titre_montant">Détecteur de montant</string>
+    <string name="titre_fil">Détecteur de fils</string>
+    <string name="titre_tuyaux">Détecteur de tuyaux</string>
+    <string name="titre_angle">Rapporteur d\'angle</string>
+
+    <string name="hello_blank_fragment">Hello</string>
+
+
+
+</resources>
+
+
+

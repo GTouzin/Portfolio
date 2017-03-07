@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="LovelyView">
+        <attr name="circleColor" format="color" />
+        <attr name="centerColor" format="color" />
+        <attr name="zoneColor" format="color" />
+        <attr name="dotColor" format="color" />
+        <attr name="detectColor" format="color" />
+        <attr name="circleLabel" format="string"/>
+        <attr name="rectCol" format="color"/>
+        <attr name="labelColor" format="color"></attr>
+    </declare-styleable>
+
+
+</resources>

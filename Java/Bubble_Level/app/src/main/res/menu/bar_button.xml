@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_list"
+        android:icon="@drawable/ic_view_headline_white_48dp"
+        android:title="@string/action_list"
+        app:showAsAction="always"
+        >
+
+        <menu>
+            <item android:id="@+id/item_main"
+                android:title="@string/return_main" />
+            <item android:id="@+id/item_niveau"
+                android:title="@string/return_niveau" />
+            <item android:id="@+id/item_nivelle"
+                android:title="@string/return_nivelle" />
+            <item android:id="@+id/item_montant"
+                android:title="@string/return_montant" />
+            <item android:id="@+id/item_fil"
+                android:title="@string/return_fil" />
+            <item android:id="@+id/item_tuyaux"
+                android:title="@string/return_tuyaux" />
+            <item android:id="@+id/item_angle"
+                android:title="@string/return_angle" />
+        </menu>
+
+    </item>
+
+
+</menu>
