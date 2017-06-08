@@ -29,7 +29,7 @@ public class Liste {
 			FileReader fileRef = new FileReader(référence);
 			FileReader fileGen = new FileReader(générateur);
 			
-			File fichier=new File("G:/Liste.txt");
+			File fichier=new File("E:/Compression/Liste.txt");
 			FileWriter fileListe = new FileWriter(fichier);
 
 			BufferedReader brRef = new BufferedReader(fileRef);
@@ -99,9 +99,9 @@ public class Liste {
 	{
 		try {			
 			
-			FileReader file = new FileReader("G:/Liste.txt");
+			FileReader file = new FileReader("E:/Compression/Liste.txt");
 			
-			File fichier=new File("G:/ListeTrier.txt");
+			File fichier=new File("E:/Compression/ListeTrier.txt");
 			FileWriter fileListeTrier = new FileWriter(fichier);
 
 			BufferedReader brRef = new BufferedReader(file);
@@ -184,10 +184,10 @@ public class Liste {
 	{
 		try {			
 			
-			FileReader file1 = new FileReader("G:/ListeTrier2.txt");
-			FileReader file2 = new FileReader("G:/ListeTrier2.txt");
+			FileReader file1 = new FileReader("E:/Compression/ListeTrier2.txt");
+			FileReader file2 = new FileReader("E:/Compression/ListeTrier2.txt");
 			
-			File fichier=new File("G:/Dictionnaire.txt");
+			File fichier=new File("E:/Compression/Dictionnaire.txt");
 			FileWriter fileListe = new FileWriter(fichier);
 
 			BufferedReader brRef1 = new BufferedReader(file1);
@@ -224,7 +224,7 @@ public class Liste {
 						}							
 					}
 					
-					brRef2 = new BufferedReader(new FileReader("G:/ListeTrier2.txt"));
+					brRef2 = new BufferedReader(new FileReader("E:/Compression/ListeTrier2.txt"));
 					
 					for(String ligneRef2; (ligneRef2 = brRef2.readLine() ) != null; ) 
 					{

@@ -4,6 +4,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/*Class used to estimate the number of time we can find a random number in a serie of random number. 
+To do so, we load a serie of random number as reference, generate a random number and look for
+that value in the reference. If we find the number, it's a success, if that's not the case, it's an echec.
+At the end we return the number of success and the ratio success/echec */
 
 public class Test {
 	
@@ -16,20 +20,19 @@ public class Test {
 		this.max=max;
 		
 	}
-	
-	
-	
+		
+	//Method who save a list of random number
 	public void Enregistrer(int essais)
 	{
 		try {			
 		
-			File fichier=new File("G:/Test.txt");
+			File fichier=new File("E:/Compression/Test.txt");
 			FileWriter file = new FileWriter(fichier);
 			
 		for(int y =0; y<essais;y++)
 		 {
 			 			 
-			 file.write((int) Math.floor(Math.random()*(max-min)+min ));
+			 file.write((int) Math.round(Math.random()*(max-min)+min ));
 		 }
 		file.close();
 		} 
@@ -38,7 +41,8 @@ public class Test {
 			}
 	}
 	
-	public void test(String ref, int longueur, int bit )
+	//Method who try to find some random number in a list of number and count the number of success. 
+	public void test_find(String ref, int longueur, int bit )
 	{
 				
 		double succes=0;
@@ -46,58 +50,46 @@ public class Test {
 		
 try {			
 			
-			File fichierGen=new File("G:/"+ref+".txt");
+			File fichierGen=new File("E:/Compression/"+ref+".txt");
 			FileReader file = new FileReader(fichierGen);
 
 			BufferedReader br = new BufferedReader(file);
 			
-			String mot="";
-			for(int x=mot.length();x<bit;x++)
-			{
-				mot=mot+Integer.toString((int)Math.round((max-min)*Math.random()+min));
-			}
+			
 			//System.out.println(mot);	
 			
 			for(int x=0;x<longueur;x++)
 			{
+				String mot="";
+				for(int y=mot.length();y<bit;y++)
+				{
+					mot=mot+Integer.toString((int)Math.round((max-min)*Math.random()+min));
+				}
 								
 				String ligne=null;
 				boolean test=false;
 				br = new BufferedReader(new FileReader(fichierGen));
+				
 				while( !test && (ligne = br.readLine()) != null) 
 				{
+					//System.out.println( br.readLine().length());
 					
 			        if(ligne.equalsIgnoreCase(mot))
 			        {
 			        	test=true;
 			        }
+			       
 			    }
 				
 				if(!test)
 				{
-					//System.out.println("mot:"+mot);
-					//System.out.println("ligne:"+ligne);
-					mot=mot.substring(1);
-					mot+=Integer.toString((int)Math.round((max-min)*Math.random()+min));
-					echec++;
-					
+					echec++;	
 				}
 				else
 				{
-					
-		        	for(int y=0;y<bit;y++)
-					{
-		        		if(x<longueur)
-		        		{
-			        		mot=mot.substring(1);
-							mot=mot+Integer.toString((int)Math.round((max-min)*Math.random()+min));
-							succes++;
-							x++;
-		        		}
-					}
-		        	x--;
+		        	succes++;
 				}
-				
+								
 			}
 			    
 			    br.close();
@@ -112,6 +104,8 @@ try {
 		      System.out.println("Error - " + e.toString());
 			}
 	}
+	
+	
 	
 	
 	

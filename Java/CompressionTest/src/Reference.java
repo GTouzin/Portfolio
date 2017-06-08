@@ -4,10 +4,11 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+//Class who generate all the combinaison of a list of coefficient
 public class Reference {
 	
-	public int[] objet;
-	public int[][] tableau_reference;
+	public int[] objet;							//array containing the coefficient
+	public int[][] tableau_reference;			//array who containt all the combinaison of coefficient
 	public Reference(int[] a){
 	
 		objet= new int[a.length];
@@ -26,7 +27,7 @@ public class Reference {
 			
 	}
 	
-	
+	//Method that populate the coefficient array name tableau_reference
 	public void Generate()
 	{
 		 int[] temp = new int[objet.length];
@@ -59,6 +60,7 @@ public class Reference {
 		 
 	}
 	
+	//Method who print the value of the coefficient array
 	public void Affichage()
 	{
 		for(int y =0; y<Math.pow(objet.length, objet.length);y++)
@@ -75,11 +77,12 @@ public class Reference {
 		
 	}
 
+	//Method that save the value of the coefficient array
 	public void Enregistrer()
 	{
 		try {			
 		
-			File fichier=new File("G:/Référence.txt");
+			File fichier=new File("E:/Compression/Référence.txt");
 			FileWriter file = new FileWriter(fichier);
 			
 		for(int y =0; y<Math.pow(objet.length, objet.length);y++)
@@ -99,13 +102,13 @@ public class Reference {
 			}
 	}
 	
-	
+	//Method that load the coefficient array
 	public void Lire()
 	{
 
 		try {			
 			
-			File fichier=new File("G:/Référence.txt");
+			File fichier=new File("E:/Compression/Référence.txt");
 			FileReader file = new FileReader(fichier);
 
 			BufferedReader br = new BufferedReader(file);

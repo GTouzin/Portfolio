@@ -2,29 +2,29 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
+//Class that use a linear congruential generator to generate a list of pseudo-random number generator
 
 public class Generator {
 	
-	public int max;
-	public int longueur;
+	public int max;									//Biggest seed used
+	public int longueur;							//Number of element in the list
 	
-	public int a= 16807;
-	public int m= (int) Math.pow(2, 31)-1;
+	public int a= 16807;							//Coefficient of the generator
+	public int m= (int) Math.pow(2, 31)-1;			//Modulo of the generator
 
-	
+	//Constructor
 	public Generator(int max, int longueur)
 	{
 		this.max=max;
 		this.longueur=longueur;
 	}
 	
-	
+	//Method that generate the list of random number and add write them to file
 	public void Generation()
 	{
 		try {			
 			
-			File fichier=new File("G:/Générateur.txt");
+			File fichier=new File("E:/Compression/Générateur.txt");
 			FileWriter file = new FileWriter(fichier);
 			
 		for(int x0 =1; x0<=max;x0++)
@@ -50,11 +50,12 @@ public class Generator {
 			}
 	}
 	
+	//Method that generate the list of random number of a maximun size and add write them to file
 	public void GenerationVentille(int long_num)
 	{
 		try {			
 			
-			File fichier=new File("G:/Générateur.txt");
+			File fichier=new File("E:/Compression/Générateur.txt");
 			FileWriter file = new FileWriter(fichier);
 			
 			
