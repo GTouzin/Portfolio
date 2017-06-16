@@ -15,14 +15,19 @@
         * IMDB_data_exploration.ipynb  show how I explored the dataset.
         * IMDB_scrapping.ipynb has been used to find additional data about the 5000 movies, historical inflation rate and exchange rate.
         * IMDB_model.ipynb show how I used the XGBoost and SVM algorithms to make prediction about the profitability of each movies.
-
-     * Kaggle_GGG (Annotations in french)
-       * I made those Jupyter Notebook or the Kaggle competition "Ghouls, Goblins, and Ghosts... Boo!" in october 2016. The competition had for goal to create a classification model for a linearly non-separable dataset.
+        
+  * Kaggle_GGG (Annotations in french)
+       * I made those Jupyter Notebook or the Kaggle competition "Ghouls, Goblins, and Ghosts... Boo!" in october 2016. The                       competition had for goal to create a classification model for a linearly non-separable dataset.
          I made two notebooks for this projects:
           * Kaggle_GGG_exploration.ipynb where I clean and explore the dataset.
           * Kaggle_GGG_Modèle.ipynb where I made my classification model.
 
-     * Titanic (Annotations in french)
+
+  * R programming
+       * This is a sample of R scripts, not notebook, I wrote for different projects. Those scripts can show you how I organize my code and tackle difficult problems. Those files are:  
+          * ward_p.R: an implementation of the Ward p algorithm that is a hierarchical clustering algorithm who use the p-norm as measure of distance between point. I implemented this algorithm since there's no R package who gives the ability of using it as a function. 
+
+   * Titanic (Annotations in french)
       * This is the first Kaggle competition in which I participated in. The challenge was to predict if a passenger of the Titanic survive the catastrophe by looking at some of their characteristics like their name, their ticket class, or
          their sex. This was a classification problem and this competition help me learn a lot about variable engineering.    
 
